@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div id="map" style="width:100px;height:200px;"></div>
+
+<script>
+    function myMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(23.7260, 90.3925),
+            zoom: 50,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        }
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }
+ </script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+<div id="result"></div>
+
+<script>
+   loadmapData();
+   function loadmapData()
+   {
+        $.post('getdata.php' , {pid:"data"} ,
+        function(data)
+        {
+              document.getElementById("result").innerHTML = data;
+        });
+   }
+</script>
+</body>
+</html>

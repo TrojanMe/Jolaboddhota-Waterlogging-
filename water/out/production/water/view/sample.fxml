@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="365.0" prefWidth="661.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fitHeight="375.0" fitWidth="660.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../controller/water.jpg" />
+               </image>
+               <effect>
+                  <Blend mode="SRC_ATOP">
+                     <topInput>
+                        <GaussianBlur />
+                     </topInput>
+                  </Blend>
+               </effect>
+            </ImageView>
+            <Button fx:id="connect" layoutX="278.0" layoutY="301.0" mnemonicParsing="false" onAction="#connectToDatabase" text="Connect to database">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN" choke="0.38" color="#0a5cc2" height="0.0" radius="3.9475" width="17.79" />
+               </effect>
+            </Button>
+            <Label layoutX="245.0" layoutY="266.0" text="Water Logging solution" textAlignment="CENTER" textFill="#012c46">
+               <font>
+                  <Font name="Ubuntu" size="20.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label fx:id="connectionstatus" layoutX="335.0" layoutY="336.0" text="Label" textFill="#077f8d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="next" layoutX="520.0" layoutY="331.0" mnemonicParsing="false" onAction="#gotomainScreen" opacity="0.83" prefHeight="30.0" prefWidth="135.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <Lighting diffuseConstant="1.58" specularConstant="0.74" specularExponent="40.0" surfaceScale="0.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+
+                  </Lighting>
+               </effect>
+            </Button>
+            <Label fx:id="lala" layoutX="555.0" layoutY="338.0" text="Main Screen" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
